@@ -38,9 +38,11 @@ public class Questao02 {
 
     static void maior(Integer a, Integer b) {
         if(a > b) {
-            System.out.println("O primeiro retângulo possui a maior área, com uma área de: " + a + "cm");
+            System.out.println("O primeiro retângulo possui a área maior, com uma área de: " + a + "cm");
+        } else if (a == b) {
+            System.out.println("Os dois retângulos possuem a mesma área, os dois com área de: " + a + "cm");
         } else {
-            System.out.println("O segundo retângulo possui a maior área, com uma área de: " + b + "cm");
+            System.out.println("O segundo retângulo possui a área maior, com uma área de: " + b + "cm");
         }
     }
 }
