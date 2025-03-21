@@ -25,7 +25,7 @@ public class Questao02 {
         a2 = altura2.nextInt();
         retanguloa = calcular(b1, a1);
         retangulob = calcular(b2, a2);
-        funcao(retanguloa, retangulob);
+        maior(retanguloa, retangulob);
         base1.close();
         altura1.close();
         base2.close();
@@ -36,7 +36,7 @@ public class Questao02 {
         return x * y;
     }
 
-    static void funcao(Integer a, Integer b) {
+    static void maior(Integer a, Integer b) {
         if(a > b) {
             System.out.println("O primeiro retângulo possui a maior área, com uma área de: " + a + "cm");
         } else {
