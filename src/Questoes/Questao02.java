@@ -2,12 +2,9 @@ package Questoes;
 
 import java.util.Scanner;
 
-public class Questao02 {
-    public static void main(String[] args) {
-        Scanner base1 = new Scanner(System.in);
-        Scanner altura1 = new Scanner(System.in);
-        Scanner base2 = new Scanner(System.in);
-        Scanner altura2 = new Scanner(System.in);
+public class Questao02 extends BaseIdentificador{
+    public static void retangulo() {
+        Scanner ler = new Scanner(System.in);
         Integer b1;
         Integer a1;
         Integer b2;
@@ -16,20 +13,17 @@ public class Questao02 {
         Integer retangulob;
         System.out.println("Digite o valor em centímetros.");
         System.out.println("Digite a base do primeiro reângulo: ");
-        b1 = base1.nextInt();
+        b1 = ler.nextInt();
         System.out.println("Digite a altura do primeiro reângulo: ");
-        a1 = altura1.nextInt();
+        a1 = ler.nextInt();
         System.out.println("Digite a base do segundo reângulo: ");
-        b2 = base2.nextInt();
+        b2 = ler.nextInt();
         System.out.println("Digite a altura do segundo reângulo: ");
-        a2 = altura2.nextInt();
+        a2 = ler.nextInt();
         retanguloa = calcular(b1, a1);
         retangulob = calcular(b2, a2);
         maior(retanguloa, retangulob);
-        base1.close();
-        altura1.close();
-        base2.close();
-        altura2.close();
+        ler.close();
     }
     
     static Integer calcular(Integer x, Integer y) {
@@ -44,5 +38,14 @@ public class Questao02 {
         } else {
             System.out.println("O segundo retângulo possui a área maior, com uma área de: " + b + "cm");
         }
+    }
+
+    public Questao02(int codigo) {
+        super(codigo);
+    }
+
+    @Override
+    public void Executar() {
+        retangulo();
     }
 }
