@@ -2,7 +2,7 @@ package Questoes;
 
 import java.util.Scanner;
 
-public class Questao02 extends BaseIdentificador{
+public class Questao02 extends Exec{
     public static void retangulo() {
         Scanner ler = new Scanner(System.in);
         Integer b1;
@@ -23,7 +23,6 @@ public class Questao02 extends BaseIdentificador{
         retanguloa = calcular(b1, a1);
         retangulob = calcular(b2, a2);
         maior(retanguloa, retangulob);
-        ler.close();
     }
     
     static Integer calcular(Integer x, Integer y) {
@@ -38,10 +37,6 @@ public class Questao02 extends BaseIdentificador{
         } else {
             System.out.println("O segundo retângulo possui a área maior, com uma área de: " + b + "cm");
         }
-    }
-
-    public Questao02(int codigo) {
-        super(codigo);
     }
 
     @Override

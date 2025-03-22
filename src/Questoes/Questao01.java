@@ -2,7 +2,7 @@ package Questoes;
 
 import java.util.Scanner;
 
-public class Questao01 extends BaseIdentificador{
+public class Questao01 extends Exec{
     public static void numero() {
         Scanner ler = new Scanner(System.in);
         Integer n1;
@@ -13,7 +13,6 @@ public class Questao01 extends BaseIdentificador{
         n2 = ler.nextInt();
         Integer recebe = maior(n1, n2);
         System.out.println("O maior número é: " + recebe);
-        ler.close();
     }
 
     static Integer maior(Integer x, Integer y) {
@@ -22,10 +21,6 @@ public class Questao01 extends BaseIdentificador{
         } else {
             return y;
         }
-    }
-
-    public Questao01(int codigo) {
-        super(codigo);
     }
 
     @Override
