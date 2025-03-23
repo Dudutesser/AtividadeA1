@@ -3,7 +3,7 @@ package Questoes;
 import java.util.Scanner;
 
 public class Questao04 extends Exec{
-    public static void aluno() {
+    public void aluno() {
         Scanner ler = new Scanner(System.in);
         Integer alunos;
         Integer alunas;

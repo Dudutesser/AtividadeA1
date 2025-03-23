@@ -17,7 +17,7 @@ public class App {
         ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "cls");
         Scanner mudar = new Scanner(System.in);
         do {
-            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            pb.inheritIO().start().waitFor();
             System.out.println("Selecione a pasta que deseja executar: ");
             System.out.println("1. Numero maior;\n2. Retangulo maior;\n3. Transformar temperatura;\n4. Separar alunos;\n5. Preço das frutas;\n6. Jogo;\n7. \n8. \n9. \n10. \n0. Sair.\n");
             x = mudar.nextInt();
@@ -28,60 +28,60 @@ public class App {
                     Questao01 q1 = new Questao01();
                     q1.Executar();
                     enter();
-                break;
+                    break;
                 case 2:
                     pb.inheritIO().start().waitFor();
                     new Questao02().Executar();
                     enter();
-                break;
+                    break;
                 case 3:
                     pb.inheritIO().start().waitFor();
                     new Questao03().Executar();
                     enter();
-                break;
+                    break;
                 case 4:
                     pb.inheritIO().start().waitFor();
                     new Questao04().Executar();
                     enter();
-                break;
+                    break;
                 case 5:
                     pb.inheritIO().start().waitFor();
                     new Questao05().Executar();
                     enter();
-                break;
+                    break;
                 case 6:
                     pb.inheritIO().start().waitFor();
                     new Questao06().Executar();;
                     enter();
-                break;
+                    break;
                 case 7:
                     pb.inheritIO().start().waitFor();
                     new Questao07().Executar();
                     enter();
-                break;
+                    break;
                 // case 8:
                 //     pb.inheritIO().start().waitFor();
                 //     new Questao08().Executar();
                     // enter();
-                // break;
+                    // break;
                 // case 9:
                 //     pb.inheritIO().start().waitFor();
                 //     new Questao09().Executar();
                     // enter();
-                // break;
+                    // break;
                 // case 10:
                 //     pb.inheritIO().start().waitFor();
                 //     new Questao10().Executar();
                     // enter();
-                // break;
+                    // break;
                 case 0:
                     System.out.println("Saindo...");
-                    break;
+                        break;
                 default:
                     pb.inheritIO().start().waitFor();
                     System.out.println(x + " não é uma opção, escolha uma opção válida!");
                     enter();
-                    break;
+                        break;
             }
         } while (x != 0);
         mudar.close();

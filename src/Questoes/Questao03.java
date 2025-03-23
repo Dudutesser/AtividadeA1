@@ -3,7 +3,7 @@ package Questoes;
 import java.util.Scanner;
 
 public class Questao03 extends Exec{
-    public static void temperatura() {
+    public void temperatura() {
         Scanner ler = new Scanner(System.in);
         Double temp;
         System.out.println("Digite a temperatura em Celcius que deseja ver em Fahrenheigt: ");

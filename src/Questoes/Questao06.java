@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Questao06 extends Exec{
-    public static void jogo() {
+    public void jogo() {
         Scanner ler = new Scanner(System.in);
         Integer h1, m1, h2, m2, tudomin1, tudomin2, jogo, hjogo, minjogo;
         System.out.println("Digite a hora de ínicio do jogo: ");

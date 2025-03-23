@@ -3,7 +3,7 @@ package Questoes;
 import java.util.Scanner;
 
 public class Questao02 extends Exec{
-    public static void retangulo() {
+    public void retangulo() {
         Scanner ler = new Scanner(System.in);
         Integer b1;
         Integer a1;

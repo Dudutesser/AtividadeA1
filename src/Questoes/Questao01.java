@@ -3,7 +3,7 @@ package Questoes;
 import java.util.Scanner;
 
 public class Questao01 extends Exec{
-    public static void numero() {
+    public void numero() {
         Scanner ler = new Scanner(System.in);
         Integer n1;
         Integer n2;

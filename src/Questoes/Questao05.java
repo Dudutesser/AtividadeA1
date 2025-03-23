@@ -3,7 +3,7 @@ package Questoes;
 import java.util.Scanner;
 
 public class Questao05 extends Exec{
-    public static void frutas() {
+    public void frutas() {
         Scanner ler = new Scanner(System.in);
         Float morango;
         Float maca;
