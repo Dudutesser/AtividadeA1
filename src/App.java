@@ -7,8 +7,8 @@ import Questoes.Questao04;
 import Questoes.Questao05;
 import Questoes.Questao06;
 import Questoes.Questao07;
-// import Questoes.Questao08;
-// import Questoes.Questao09;
+import Questoes.Questao08;
+import Questoes.Questao09;
 // import Questoes.Questao10;
 
 public class App {
@@ -19,7 +19,8 @@ public class App {
         do {
             pb.inheritIO().start().waitFor();
             System.out.println("Selecione a pasta que deseja executar: ");
-            System.out.println("1. Numero maior;\n2. Retangulo maior;\n3. Transformar temperatura;\n4. Separar alunos;\n5. Preço das frutas;\n6. Jogo;\n7. \n8. \n9. \n10. \n0. Sair.\n");
+            System.out.println("1. Numero maior;\n2. Retangulo maior;\n3. Transformar temperatura;\n4. Separar alunos;\n5. Preço das frutas;");
+            System.out.println("6. Jogo;\n7. Compra na loja;\n8. Modificação do carro;\n9. Conta de água;\n10. Taxa;\n0. Sair.\n");
             x = mudar.nextInt();
             mudar.nextLine();
             switch (x) {
@@ -59,16 +60,16 @@ public class App {
                     new Questao07().Executar();
                     enter();
                     break;
-                // case 8:
-                //     pb.inheritIO().start().waitFor();
-                //     new Questao08().Executar();
-                    // enter();
-                    // break;
-                // case 9:
-                //     pb.inheritIO().start().waitFor();
-                //     new Questao09().Executar();
-                    // enter();
-                    // break;
+                case 8:
+                    pb.inheritIO().start().waitFor();
+                    new Questao08().Executar();
+                    enter();
+                    break;
+                case 9:
+                    pb.inheritIO().start().waitFor();
+                    new Questao09().Executar();
+                    enter();
+                    break;
                 // case 10:
                 //     pb.inheritIO().start().waitFor();
                 //     new Questao10().Executar();

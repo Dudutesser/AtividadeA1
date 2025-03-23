@@ -9,7 +9,7 @@ public class Questao07 extends Exec{
         Integer opcao = 0;
         Double valor;
         String valorstring = "a";
-        System.out.println("Digite o valor total gasto na loja: ");
+        System.out.println("Digite o valor total gasto na loja:");
         valor = ler.nextDouble();
         opcao = menu(ler, valor, opcao);
         if (opcao == 1) {
@@ -55,7 +55,7 @@ public class Questao07 extends Exec{
         if (valor >= 100) {
             System.out.println("3. De 3 até 10 vezes com 3% de juros ao mês (somente para compras acima de R$ 100,00).");
         }
-        System.out.println("Selecione a forma de pagamento: ");
+        System.out.println("Selecione a forma de pagamento:");
         int menu = ler.nextInt();
         switch (menu) {
             case 1:
