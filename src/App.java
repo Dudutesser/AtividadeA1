@@ -76,13 +76,14 @@ public class App {
                     enter();
                     break;
                 case 0:
+                    pb.inheritIO().start().waitFor();
                     System.out.println("Saindo...");
-                        break;
+                    break;
                 default:
                     pb.inheritIO().start().waitFor();
                     System.out.println(x + " não é uma opção, escolha uma opção válida!");
                     enter();
-                        break;
+                    break;
             }
         } while (x != 0);
         mudar.close();
