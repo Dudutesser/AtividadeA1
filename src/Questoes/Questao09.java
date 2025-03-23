@@ -1,9 +1,11 @@
 package Questoes;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Questao09 extends Exec{
-    public void contaagua() {
+    public void contaagua() throws InterruptedException, IOException {
+        ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "cls");
         Scanner ler = new Scanner(System.in);
         Double m3;
         Integer tipoconsumidor;
@@ -14,12 +16,12 @@ public class Questao09 extends Exec{
         System.out.println("1. Residencial: R$5,00 de taxa mais R$0,05 por m3 gastos;");
         System.out.println("2. Comercial: R$500,00 para os primeiros 80 m3 gastos mais R$0,25 por m3 gastos;");
         System.out.println("3. Industrial: R$800,00 para os primeiros 100 m3 gastos mais R$0,04 por m3 gastos;");
-        System.out.println("-----------------------------------------------------------------------------------\n");
+        System.out.println("-----------------------------------------------------------------------------------");
         tipoconsumidor = ler.nextInt();
-        System.out.println("\nDigite o consumo de água em metros cúbicos:");
+        System.out.println("Digite o consumo de água em metros cúbicos:");
         m3 = ler.nextDouble();
         if (tipoconsumidor == 1) {
-            conta += (5 * m3);
+            conta += (5 + (0.05 * m3));
             consumidor = "residencial";
         } else if (tipoconsumidor == 2) {
             conta += 500;
@@ -34,12 +36,12 @@ public class Questao09 extends Exec{
             }
             consumidor = "industrial";
         }
-        System.out.println("\nO seu tipo de conta é " + consumidor + " e o valor total a ser pago é de: " + conta);
+        pb.inheritIO().start().waitFor();
+        System.out.printf("\nO seu tipo de conta é " + consumidor + " e o valor total a ser pago é de: R$%.2f\n", conta);
     }
 
     @Override
-    public void Executar() {
+    public void Executar() throws InterruptedException, IOException {
         contaagua();
     }
-    
 }

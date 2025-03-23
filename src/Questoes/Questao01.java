@@ -12,7 +12,7 @@ public class Questao01 extends Exec{
         System.out.println("Digite o segundo numero:");
         n2 = ler.nextInt();
         Integer recebe = maior(n1, n2);
-        System.out.println("O maior número é:" + recebe);
+        System.out.println("O maior número é: " + recebe);
     }
 
     static Integer maior(Integer x, Integer y) {

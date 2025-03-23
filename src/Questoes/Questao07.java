@@ -1,10 +1,11 @@
 package Questoes;
 
-import java.text.DecimalFormat;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Questao07 extends Exec{
-    public void loja() {
+    public void loja() throws InterruptedException, IOException {
+        ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "cls");
         Scanner ler = new Scanner(System.in);
         Integer opcao = 0;
         Double valor;
@@ -14,43 +15,48 @@ public class Questao07 extends Exec{
         opcao = menu(ler, valor, opcao);
         if (opcao == 1) {
             valor = avista(valor);
-            valorstring = "A vista";
+            valorstring = "a vista";
         } else if (opcao == 2) {
             valor = parce2x(valor);
-            valorstring = "Parcelado em duas vezes";
+            valorstring = "parcelado em duas vezes";
         } else if (opcao == 3) {
             valor = parce3x(valor);
-            valorstring = "Parcelado em três vezes";
+            valorstring = "parcelado em três vezes";
         } else if (opcao == 4) {
             valor = parce4x(valor);
-            valorstring = "Parcelado em quatro vezes";
+            valorstring = "parcelado em quatro vezes";
         } else if (opcao == 5) {
             valor = parce5x(valor);
-            valorstring = "Parcelado em cinco vezes";
+            valorstring = "parcelado em cinco vezes";
         } else if (opcao == 6) {
             valor = parce6x(valor);
-            valorstring = "Parcelado em seis vezes";
+            valorstring = "parcelado em seis vezes";
         } else if (opcao == 7) {
             valor = parce7x(valor);
-            valorstring = "Parcelado em sete vezes";
+            valorstring = "parcelado em sete vezes";
         } else if (opcao == 8) {
             valor = parce8x(valor);
-            valorstring = "Parcelado em oito vezes";
+            valorstring = "parcelado em oito vezes";
         } else if (opcao == 9) {
             valor = parce9x(valor);
-            valorstring = "Parcelado em nove vezes";
+            valorstring = "parcelado em nove vezes";
         } else if (opcao == 10) {
             valor = parce10x(valor);
-            valorstring = "Parcelado em dez vezes";
+            valorstring = "parcelado em dez vezes";
+        } else {
+            pb.inheritIO().start().waitFor();
+            System.out.println("Algo deu errado.");
         }
-        DecimalFormat form = new DecimalFormat("00");
-        String pagamento = form.format(valor);
-        System.out.println("\n" + valorstring + " e o valor total é de: " + pagamento);
-
+        if (opcao >= 1 && opcao <= 10) {
+            pb.inheritIO().start().waitFor();
+            System.out.printf("A forma de pagamento selecionada é " + valorstring + " e o valor total é de: %.2f\n", valor);
+        }
     }
 
-    public Integer menu(Scanner ler, Double valor, Integer opcao) {
-        System.out.println("\n1. A vista com 10% de desconto;");
+    public Integer menu(Scanner ler, Double valor, Integer opcao) throws InterruptedException, IOException {
+        ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "cls");
+        pb.inheritIO().start().waitFor();
+        System.out.println("1. A vista com 10% de desconto;");
         System.out.println("2. Em duas vezes (preço da etiqueta);");
         if (valor >= 100) {
             System.out.println("3. De 3 até 10 vezes com 3% de juros ao mês (somente para compras acima de R$ 100,00).");
@@ -67,7 +73,8 @@ public class Questao07 extends Exec{
             case 3:
                 if (valor >= 100) {
                     Scanner m2 = new Scanner(System.in);
-                    System.out.println("\nTodas as opções tem 3X de juros ao mês");
+                    pb.inheritIO().start().waitFor();
+                    System.out.println("Todas as opções tem 3X de juros ao mês");
                     System.out.println("1. 3x;\n2. 4x;\n3. 5x;\n4. 6x;\n5. 7x;\n6. 8x;\n7. 9x\n8. 10x");
                     int menu2 = m2.nextInt();
                     switch (menu2) {
@@ -95,16 +102,11 @@ public class Questao07 extends Exec{
                         case 8:
                             opcao = 10;
                             break;
-                        default:
-                            System.out.println("Digite uma opção válida.");
-                            break;
                     }
                 }
                 
                 break;
             default:
-                System.out.println("Digite uma opção válida.");
-                break;
         }
         return opcao;
     }
@@ -174,7 +176,7 @@ public class Questao07 extends Exec{
     }
 
     @Override
-    public void Executar() {
+    public void Executar() throws InterruptedException, IOException {
         loja();
     }
 }
